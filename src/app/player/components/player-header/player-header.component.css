@@ -1,0 +1,148 @@
+.player-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.player-photo {
+  flex-shrink: 0;
+}
+
+.player-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.player-basic-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.player-name-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.player-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 0;
+  color: #000;
+}
+
+.player-badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.badge-green {
+  background-color: #7cb342;
+  color: white;
+}
+
+.badge-orange {
+  background-color: #ff6f00;
+  color: white;
+}
+
+.badge-red {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.badge-blue {
+  background-color: #1976d2;
+  color: white;
+}
+
+.badge-purple {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+.badge-pink {
+  background-color: #e91e63;
+  color: white;
+}
+
+.player-details {
+  display: flex;
+  gap: 40px;
+}
+
+.detail-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #000;
+}
+
+.detail-value {
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .player-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .player-basic-info {
+    align-items: center;
+  }
+
+  .player-badges {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .player-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .player-name {
+    font-size: 28px;
+    text-align: center;
+  }
+}

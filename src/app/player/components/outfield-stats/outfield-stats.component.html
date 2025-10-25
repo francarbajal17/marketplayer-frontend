@@ -1,0 +1,167 @@
+<div class="section">
+  <h2 class="section-title">2024-2025 Season Stats</h2>
+  
+  <div class="stats-grid">
+    <!-- Playing Time & Appearances -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Playing Time & Appearances</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Matches played</span>
+          <span class="stat-value">{{ stats.playingTime.matchesPlayed }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Games started</span>
+          <span class="stat-value">{{ stats.playingTime.gamesStarted }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Minutes played</span>
+          <span class="stat-value">{{ stats.playingTime.minutesPlayed }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Full matches completed</span>
+          <span class="stat-value">{{ stats.playingTime.fullMatchesCompleted }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Possession & Ball Control -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Possession & Ball Control</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Touches</span>
+          <span class="stat-value">{{ stats.possession.touches }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Carries</span>
+          <span class="stat-value">{{ stats.possession.carries }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Progressive runs</span>
+          <span class="stat-value">{{ stats.possession.progressiveRuns }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Miscontrols</span>
+          <span class="stat-value">{{ stats.possession.miscontrols }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Times dispossessed</span>
+          <span class="stat-value">{{ stats.possession.timesDispossessed }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attacking Stats -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Attacking Stats</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Goals</span>
+          <span class="stat-value">{{ stats.attacking.goals }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Assists</span>
+          <span class="stat-value">{{ stats.attacking.assists }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Expected goals</span>
+          <span class="stat-value">{{ stats.attacking.expectedGoals }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Expected assists</span>
+          <span class="stat-value">{{ stats.attacking.expectedAssists }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Goals excluding penalties</span>
+          <span class="stat-value">{{ stats.attacking.goalsExcludingPenalties }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passing & Creativity Stats -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Passing & Creativity Stats</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Progressive passes</span>
+          <span class="stat-value">{{ stats.passing.progressivePasses }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Progressive carries</span>
+          <span class="stat-value">{{ stats.passing.progressiveCarries }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Key passes</span>
+          <span class="stat-value">{{ stats.passing.keyPasses }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Pass completion percentage</span>
+          <span class="stat-value">{{ stats.passing.passCompletionPercentage }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Passes into the penalty area</span>
+          <span class="stat-value">{{ stats.passing.passesIntoPenaltyArea }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defensive Stats -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Defensive Stats</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Total tackles</span>
+          <span class="stat-value">{{ stats.defensive.totalTackles }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Tackles won</span>
+          <span class="stat-value">{{ stats.defensive.tacklesWon }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Blocks made</span>
+          <span class="stat-value">{{ stats.defensive.blocksMade }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Interceptions</span>
+          <span class="stat-value">{{ stats.defensive.interceptions }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Clearances</span>
+          <span class="stat-value">{{ stats.defensive.clearances }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Errors leading to goals</span>
+          <span class="stat-value">{{ stats.defensive.errorsLeadingToGoals }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miscellaneous Stats -->
+    <div class="stats-category">
+      <h3 class="stats-category-title">Miscellaneous Stats</h3>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Yellow cards</span>
+          <span class="stat-value">{{ stats.miscellaneous.yellowCards }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Red cards</span>
+          <span class="stat-value">{{ stats.miscellaneous.redCards }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Penalties won</span>
+          <span class="stat-value">{{ stats.miscellaneous.penaltiesWon }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Penalties conceded</span>
+          <span class="stat-value">{{ stats.miscellaneous.penaltiesConceded }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Ball recoveries</span>
+          <span class="stat-value">{{ stats.miscellaneous.ballRecoveries }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

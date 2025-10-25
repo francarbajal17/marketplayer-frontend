@@ -1,0 +1,35 @@
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  color: #000;
+}
+
+.social-networks {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.social-handle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #000;
+}

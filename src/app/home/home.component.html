@@ -1,0 +1,15 @@
+<div class="homepage-container">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 class="title">marketplayer</h1>
+    <div class="search-container">
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Search the player you want..."
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+      />
+    </div>
+  </div>
+</div>
