@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
@@ -54,13 +56,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     });
 
-    // Close suggestions when clicking outside
-    document.addEventListener('click', (event) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest('.search-container')) {
-        this.hideSuggestions();
-      }
-    });
+    // Close suggestions when clicking outside (only in browser)
+    if (isPlatformBrowser(this.platformId)) {
+      document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        if (!target.closest('.search-container')) {
+          this.hideSuggestions();
+        }
+      });
+    }
   }
 
   ngOnDestroy(): void {
