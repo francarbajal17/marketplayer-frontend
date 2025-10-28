@@ -90,6 +90,11 @@
   color: white;
 }
 
+.badge-gray {
+  background-color: #757575;
+  color: white;
+}
+
 .player-details {
   display: flex;
   gap: 40px;

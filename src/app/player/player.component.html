@@ -2,32 +2,39 @@
   <div class="background-image"></div>
   
   <div class="player-content">
-    <div class="player-card">
-      <!-- Header con foto y datos básicos -->
-      <app-player-header
-        [name]="playerData.name"
-        [photo]="playerData.photo"
-        [badges]="playerData.badges"
-        [age]="playerData.age"
-        [birth]="playerData.birth"
-        [club]="playerData.club"
-        [nationality]="playerData.nationality"
-        [height]="playerData.height"
-        [weight]="playerData.weight"
-      />
+    @if (isLoading) {
+      <div class="loading-container">
+        <div class="spinner"></div>
+        <p>Cargando jugador...</p>
+      </div>
+    } @else if (playerData) {
+      <div class="player-card">
+        <!-- Header con foto y datos básicos -->
+        <app-player-header
+          [name]="playerData.name"
+          [photo]="playerData.photo"
+          [badges]="playerData.badges"
+          [age]="playerData.age"
+          [birth]="playerData.birth"
+          [club]="playerData.club"
+          [nationality]="playerData.nationality"
+          [height]="playerData.height"
+          [weight]="playerData.weight"
+        />
 
-      <!-- Descripción -->
-      <app-player-description [description]="playerData.description" />
+        <!-- Descripción -->
+        <app-player-description [description]="playerData.description" />
 
-      <!-- Redes Sociales -->
-      <app-player-social [socialNetworks]="playerData.socialNetworks" />
+        <!-- Redes Sociales -->
+        <app-player-social [socialNetworks]="playerData.socialNetworks" />
 
-      <!-- Estadísticas de la temporada -->
-      @if (playerType === 'outfield') {
-        <app-outfield-stats [stats]="playerData.stats" />
-      } @else if (playerType === 'goalkeeper') {
-        <app-goalkeeper-stats [stats]="playerData.stats" />
-      }
-    </div>
+        <!-- Estadísticas de la temporada -->
+        @if (playerType === 'outfield') {
+          <app-outfield-stats [stats]="playerData.stats" />
+        } @else if (playerType === 'goalkeeper') {
+          <app-goalkeeper-stats [stats]="playerData.stats" />
+        }
+      </div>
+    }
   </div>
 </div>

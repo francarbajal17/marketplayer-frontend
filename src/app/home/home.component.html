@@ -8,8 +8,26 @@
         class="search-input" 
         placeholder="Search the player you want..."
         [(ngModel)]="searchQuery"
+        (input)="onSearchInput()"
         (keyup.enter)="onSearch()"
+        autocomplete="off"
       />
+      
+      @if (isLoading) {
+        <div class="suggestions-box">
+          <div class="loading-suggestion">Buscando...</div>
+        </div>
+      }
+      
+      @if (showSuggestions && !isLoading && suggestions.length > 0) {
+        <div class="suggestions-box">
+          @for (player of suggestions; track player.strPlayer) {
+            <div class="suggestion-item" (click)="selectPlayer(player.strPlayer)">
+              <span class="suggestion-name">{{ player.strPlayer }}</span>
+            </div>
+          }
+        </div>
+      }
     </div>
   </div>
 </div>

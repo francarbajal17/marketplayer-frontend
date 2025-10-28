@@ -1,17 +1,25 @@
-<div class="section">
-  <h2 class="section-title">Social networks</h2>
-  <div class="social-networks">
-    <div class="social-item">
-      <img src="/free-instagram-logo-icon-3497-thumb.png" alt="Instagram" class="social-icon">
-      <span class="social-handle">{{ socialNetworks.instagram }}</span>
-    </div>
-    <div class="social-item">
-      <img src="/new-twitter-x-logo-twitter-icon-x-social-media-icon-free-png.webp" alt="Twitter" class="social-icon">
-      <span class="social-handle">{{ socialNetworks.twitter }}</span>
-    </div>
-    <div class="social-item">
-      <img src="/20673.png" alt="Facebook" class="social-icon">
-      <span class="social-handle">{{ socialNetworks.facebook }}</span>
+@if (hasSocialNetworks()) {
+  <div class="section">
+    <h2 class="section-title">Social networks</h2>
+    <div class="social-networks">
+      @if (socialNetworks.instagram) {
+        <a [href]="getSocialUrl('instagram', socialNetworks.instagram)" target="_blank" rel="noopener noreferrer" class="social-item">
+          <img src="/free-instagram-logo-icon-3497-thumb.png" alt="Instagram" class="social-icon">
+          <span class="social-handle">{{ socialNetworks.instagram }}</span>
+        </a>
+      }
+      @if (socialNetworks.twitter) {
+        <a [href]="getSocialUrl('twitter', socialNetworks.twitter)" target="_blank" rel="noopener noreferrer" class="social-item">
+          <img src="/new-twitter-x-logo-twitter-icon-x-social-media-icon-free-png.webp" alt="Twitter" class="social-icon">
+          <span class="social-handle">{{ socialNetworks.twitter }}</span>
+        </a>
+      }
+      @if (socialNetworks.facebook) {
+        <a [href]="getSocialUrl('facebook', socialNetworks.facebook)" target="_blank" rel="noopener noreferrer" class="social-item">
+          <img src="/20673.png" alt="Facebook" class="social-icon">
+          <span class="social-handle">{{ socialNetworks.facebook }}</span>
+        </a>
+      }
     </div>
   </div>
-</div>
+}
