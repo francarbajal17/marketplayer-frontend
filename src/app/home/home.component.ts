@@ -95,4 +95,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.showSuggestions = false;
     this.suggestions = [];
   }
+
+  goToRanking(type: string): void {
+    this.router.navigate(['/ranking', type]);
+  }
 }

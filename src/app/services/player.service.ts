@@ -57,6 +57,39 @@ export interface PlayerSearchResult {
   strPlayer: string;
 }
 
+export interface TopScorer {
+  strPlayer: string;
+  strCutout: string;
+  Gls: number;
+}
+
+export interface TopGoalkeeper {
+  strPlayer: string;
+  strCutout: string;
+  CS: number;
+}
+
+export interface TopDefender {
+  strPlayer: string;
+  strCutout: string;
+  tackleEfficiency: string;
+  Tkl: number;
+  TklW: number;
+  strPosition: string;
+}
+
+export interface TopTouches {
+  strPlayer: string;
+  strCutout: string;
+  Touches: number;
+}
+
+export interface TopAssister {
+  strPlayer: string;
+  strCutout: string;
+  Ast: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -72,5 +105,25 @@ export class PlayerService {
 
   searchPlayers(query: string, limit: number = 5): Observable<PlayerSearchResult[]> {
     return this.http.get<PlayerSearchResult[]>(`${this.searchUrl}?q=${encodeURIComponent(query)}&limit=${limit}`);
+  }
+
+  getTopScorers(): Observable<TopScorer[]> {
+    return this.http.get<TopScorer[]>('http://localhost:3000/api/top-goleadores');
+  }
+
+  getTopGoalkeepers(): Observable<TopGoalkeeper[]> {
+    return this.http.get<TopGoalkeeper[]>('http://localhost:3000/api/top-goleros');
+  }
+
+  getTopDefenders(): Observable<TopDefender[]> {
+    return this.http.get<TopDefender[]>('http://localhost:3000/api/top-defensas');
+  }
+
+  getTopTouches(): Observable<TopTouches[]> {
+    return this.http.get<TopTouches[]>('http://localhost:3000/api/top-touches');
+  }
+
+  getTopAssisters(): Observable<TopAssister[]> {
+    return this.http.get<TopAssister[]>('http://localhost:3000/api/top-asistidores');
   }
 }

@@ -1,0 +1,47 @@
+<div class="players-list-container">
+  <div class="overlay"></div>
+  
+  <div class="content">
+    <button class="back-button" (click)="goBack()">
+      <span class="back-arrow">←</span> Volver
+    </button>
+
+    <h1 class="title">{{ title }}</h1>
+
+    @if (isLoading) {
+      <div class="loading">Cargando...</div>
+    }
+
+    @if (!isLoading && players.length > 0) {
+      <div class="players-grid">
+        @for (player of players; track player.strPlayer; let i = $index) {
+          <div class="player-card" (click)="goToPlayer(player.strPlayer)">
+            <div class="rank-badge">{{ i + 1 }}</div>
+            <div class="player-image-container">
+              <img 
+                [src]="player.strCutout" 
+                [alt]="player.strPlayer"
+                class="player-image"
+                (error)="$event.target.src='/default-player.png'"
+              />
+            </div>
+            <div class="player-info">
+              <h3 class="player-name">{{ player.strPlayer }}</h3>
+              <div class="player-stat">
+                <span class="stat-value">{{ player.statValue }}</span>
+                <span class="stat-label">{{ player.statLabel }}</span>
+              </div>
+              @if (player.additionalInfo) {
+                <div class="additional-info">{{ player.additionalInfo }}</div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (!isLoading && players.length === 0) {
+      <div class="no-data">No se encontraron datos</div>
+    }
+  </div>
+</div>

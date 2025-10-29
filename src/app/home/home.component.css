@@ -1,26 +1,30 @@
 .homepage-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   background-image: url('/vienna-reyes-qCrKTET_09o-unsplash.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 1;
+  pointer-events: none;
 }
 
 .content {
@@ -29,7 +33,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .title {
@@ -106,4 +112,128 @@
   font-size: 14px;
   font-weight: 500;
   color: #333;
+}
+
+/* Rankings Section */
+.rankings-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.rankings-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.3px;
+}
+
+.rankings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.ranking-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 28px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ranking-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-icon {
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.ranking-card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ranking-card-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .homepage-container {
+    padding: 40px 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .rankings-title {
+    font-size: 24px;
+  }
+
+  .rankings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .ranking-card {
+    padding: 24px 16px;
+  }
+
+  .ranking-icon {
+    font-size: 36px;
+  }
+
+  .ranking-card-title {
+    font-size: 15px;
+  }
+
+  .ranking-card-description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .rankings-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ranking-card {
+    padding: 20px;
+  }
 }

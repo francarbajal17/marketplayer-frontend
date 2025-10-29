@@ -2,6 +2,7 @@
   <div class="overlay"></div>
   <div class="content">
     <h1 class="title">marketplayer</h1>
+    
     <div class="search-container">
       <input 
         type="text" 
@@ -28,6 +29,41 @@
           }
         </div>
       }
+    </div>
+
+    <div class="rankings-section">
+      <h2 class="rankings-title">Explora Rankings</h2>
+      <div class="rankings-grid">
+        <div class="ranking-card" (click)="goToRanking('scorers')">
+          <div class="ranking-icon">⚽</div>
+          <h3 class="ranking-card-title">Mayores Goleadores</h3>
+          <p class="ranking-card-description">Top 20 jugadores con más goles</p>
+        </div>
+
+        <div class="ranking-card" (click)="goToRanking('goalkeepers')">
+          <div class="ranking-icon">🧤</div>
+          <h3 class="ranking-card-title">Arqueros Destacados</h3>
+          <p class="ranking-card-description">Más vallas invictas</p>
+        </div>
+
+        <div class="ranking-card" (click)="goToRanking('defenders')">
+          <div class="ranking-icon">🛡️</div>
+          <h3 class="ranking-card-title">Mejores Defensores</h3>
+          <p class="ranking-card-description">Mayor eficacia en barridas</p>
+        </div>
+
+        <div class="ranking-card" (click)="goToRanking('touches')">
+          <div class="ranking-icon">👟</div>
+          <h3 class="ranking-card-title">Mayor Contacto</h3>
+          <p class="ranking-card-description">Más toques del balón</p>
+        </div>
+
+        <div class="ranking-card" (click)="goToRanking('assisters')">
+          <div class="ranking-icon">🎯</div>
+          <h3 class="ranking-card-title">Mayores Asistidores</h3>
+          <p class="ranking-card-description">Top 20 en asistencias</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
