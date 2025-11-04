@@ -34,6 +34,7 @@
         } @else if (playerType === 'goalkeeper') {
           <app-goalkeeper-stats [stats]="playerData.stats" />
         }
+        <app-json-ld-component [playerData]="playerData"/>
       </div>
     }
   </div>

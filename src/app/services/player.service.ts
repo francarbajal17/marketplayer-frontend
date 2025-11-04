@@ -51,6 +51,7 @@ export interface PlayerData {
   'CS%'?: number;
   PKA?: number;
   PKsv?: number;
+  wikiData?: string;
 }
 
 export interface PlayerSearchResult {

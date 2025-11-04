@@ -7,6 +7,7 @@ import { PlayerSocialComponent } from './components/player-social/player-social.
 import { OutfieldStatsComponent } from './components/outfield-stats/outfield-stats.component';
 import { GoalkeeperStatsComponent } from './components/goalkeeper-stats/goalkeeper-stats.component';
 import { PlayerService, PlayerData } from '../services/player.service';
+import { JsonLDComponent } from './components/json-ld/json-ld.component';
 
 @Component({
   selector: 'app-player',
@@ -17,7 +18,8 @@ import { PlayerService, PlayerData } from '../services/player.service';
     PlayerDescriptionComponent,
     PlayerSocialComponent,
     OutfieldStatsComponent,
-    GoalkeeperStatsComponent
+    GoalkeeperStatsComponent,
+    JsonLDComponent
   ],
   templateUrl: './player.component.html',
   styleUrl: './player.component.css'
@@ -76,7 +78,8 @@ export class PlayerComponent implements OnInit {
         twitter: data.strTwitter || '',
         facebook: data.strFacebook || ''
       },
-      stats: this.playerType === 'goalkeeper' ? this.transformGoalkeeperStats(data) : this.transformOutfieldStats(data)
+      stats: this.playerType === 'goalkeeper' ? this.transformGoalkeeperStats(data) : this.transformOutfieldStats(data),
+      wikiData: data.wikiData || ''
     };
   }
 
