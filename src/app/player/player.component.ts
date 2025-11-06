@@ -110,6 +110,21 @@ export class PlayerComponent implements OnInit {
       badges.push({ text: 'Striker', color: 'red' }); // Red for striker
     }
 
+    // Assister badge (Ast > 8)
+    if (data.Ast > 8) {
+      badges.push({ text: 'Great Assister', color: 'green' }); // Green for assister
+    }
+
+    // Angry badge (Ast > 8)
+    if (data.CrdY > 10) {
+      badges.push({ text: 'Angry player', color: 'red' }); // Red for angry player
+    }
+
+    // Ball recoverier badge (Recov > 100)
+    if (data.Recov > 100) {
+      badges.push({ text: 'Fisherman', color: 'blue' }); // Blue for fisherman player
+    }
+
     return badges;
   }
 
